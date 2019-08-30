@@ -9,16 +9,17 @@ var checkForMatch = function(){
   		console.log("You found a match!");
 	} else {
   		console.log("Sorry, try again.");
-}
+	}
 }
 
 var flipCard = function(cardId) {
 	console.log("User flipped " + cards[cardId]);
-	cardsInPlay.push([cardId]);
+	cardsInPlay.push(cards[cardId]);
 	if(cardsInPlay.length === 2){
-	   checkForMatch();
-}
+		checkForMatch();
+} 
 }
 
 flipCard(0);
 flipCard(2);
+
