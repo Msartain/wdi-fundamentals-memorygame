@@ -46,8 +46,6 @@ var flipCard = function() {
 	} 
 }
 
-
-
 var createBoard = function(){
 	for(var i = 0; i < cards.length; i++){
 		var cardElement = document.createElement('img');
@@ -59,3 +57,12 @@ var createBoard = function(){
 };
 
 createBoard();
+
+
+var resetTheGame = function(){
+	cardsInPlay = [];
+	for (var i = 0; i < cards.length; i++){
+		var x = document.getElementsByTagName("img")[i];
+		x.setAttribute('src', "images/back.png");	
+	}
+}
