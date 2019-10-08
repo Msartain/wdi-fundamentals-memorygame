@@ -27,9 +27,9 @@ var cardsInPlay = [];
 
 var checkForMatch = function(){
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-  		alert("You found a match!");
+		setTimeout(function(){alert("You found a match!");},350);
 	} else {
-  		alert("Sorry, try again.");
+		setTimeout(function(){alert("Sorry, try again.");},350);
 	}
 }
 
@@ -58,11 +58,28 @@ var createBoard = function(){
 
 createBoard();
 
+var shuffle = function(cards){
+	let i, randomNum;
+	let num = 0;
+	for (i = cards.length - 1; i >= 0; i--) {
+		randomNum = Math.floor(Math.random() * (i + 1));
+		console.log(" random number ",randomNum);
+		console.log("cards",cards[i]);
+		[cards[i], cards[randomNum]] = [cards[randomNum], cards[i]];
+		num++;
+	}
+	console.log(num);
+	return cards;
+	console.log("new deck of cards",cards);
+}
+
 
 var resetTheGame = function(){
 	cardsInPlay = [];
+	shuffle(cards);
 	for (var i = 0; i < cards.length; i++){
 		var resetImage = document.getElementsByTagName("img")[i];
-		resetImage.setAttribute('src', "images/back.png");	
+		resetImage.setAttribute('src', "images/back.png");
+
 	}
 }

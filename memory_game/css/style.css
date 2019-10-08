@@ -90,11 +90,13 @@ footer {
 .copyright {
 	float: left;
 	font-family: "Raleway", sans-serif;
+	padding-left: 3%;
 }
 
 .message {
 	float: right;
 	font-family: "Raleway", sans-serif;
+	padding-right: 3%;
 }
 
 .clearfix:after {
